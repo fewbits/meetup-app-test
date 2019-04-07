@@ -1,0 +1,33 @@
+---
+resources:
+  # Um objeto que representa este repositório
+  ## Apenas no CI os repositórios são baixados automaticamente
+  ## Em workflows, você precisa definir os repositórios e solicitar o download
+  - name: meetup-app-test
+    type: gitRepo
+    integration: github
+    versionTemplate:
+      sourceName: fewbits/meetup-app-test
+      branch: master
+
+jobs:
+  - name: performance_test
+    type: runSh
+    steps:
+      # O nosso gatilho é um deploy feito no ambiente de Testes
+      - IN: vm_test_deploy
+        switch: on
+      # Vou usar este repositório, que também é um gatilho
+      - IN: meetup-app-test
+        switch: on
+      # Agora é a tarefa...
+      - TASK:
+          name: performance_test
+          runtime:
+            options:
+          script:
+            # Solicito dados do repositório
+            - pushd $(shipctl get_resource_state "meetup-app-test")
+            # Executo os testes
+            - ./performance-test.sh
+
