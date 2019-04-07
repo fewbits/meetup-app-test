@@ -23,8 +23,6 @@ jobs:
       # Agora é a tarefa...
       - TASK:
           name: performance_test
-          runtime:
-            options:
           script:
             # Solicito dados do repositório
             - pushd $(shipctl get_resource_state "meetup-app-test")
