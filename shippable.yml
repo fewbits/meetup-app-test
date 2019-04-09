@@ -21,6 +21,9 @@ jobs:
       # Vou usar este repositório, que também é um gatilho
       - IN: meetup-app-test
         switch: on
+      # Preciso saber o IP atual desta VM
+      - IN: vm_test
+        switch: off
       # Agora é a tarefa...
       - TASK:
           name: performance_test
