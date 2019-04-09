@@ -20,7 +20,7 @@ echo "Starting tests..."
 for testRun in $(seq 1 1 ${testTimes})
 do
   echo -n "  -> Attempt ${testRun} of ${testTimes}: "
-  timeout ${testTimeout} curl -s http://meetup-test.lowbit.com.br > /dev/null 2>&1
+  timeout ${testTimeout} curl -s http://35.225.214.161 > /dev/null 2>&1
   curlRC=$?
 
   if [[ $curlRC -eq 0 ]]; then
