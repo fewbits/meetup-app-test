@@ -18,9 +18,9 @@ jobs:
       # O nosso gatilho é um deploy feito no ambiente de Testes
       - IN: vm_test_deploy
         switch: on
-      # Vou usar este repositório, que também é um gatilho
+      # Vou usar este repositório
       - IN: meetup-app-test
-        switch: on
+        switch: off
       # Preciso saber o IP atual desta VM
       - IN: vm_test
         switch: off
