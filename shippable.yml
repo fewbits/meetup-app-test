@@ -3,11 +3,11 @@ resources:
   # Um objeto que representa este repositório
   ## Apenas no CI os repositórios são baixados automaticamente
   ## Em workflows, você precisa definir os repositórios e solicitar o download
-  - name: meetup-app-test
+  - name: qconsp-test
     type: gitRepo
     integration: github
     versionTemplate:
-      sourceName: fewbits/meetup-app-test
+      sourceName: fewbits/qconsp-test
       branch: master
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
       - IN: vm_test_deploy
         switch: on
       # Vou usar este repositório
-      - IN: meetup-app-test
+      - IN: qconsp-test
         switch: off
       # Preciso saber o IP atual desta VM
       - IN: vm_test
@@ -29,7 +29,7 @@ jobs:
           name: performance_test
           script:
             # Solicito arquivos do repositório
-            - pushd $(shipctl get_resource_state "meetup-app-test")/shell
+            - pushd $(shipctl get_resource_state "qconsp-test")/shell
             # Executo os testes
             - ./performance-test.sh
 
