@@ -22,7 +22,7 @@ jobs:
       - IN: qconsp-test
         switch: off
       # Preciso saber o IP atual desta VM
-      - IN: vm_test
+      - IN: vm_test_ip
         switch: off
       # Agora é a tarefa...
       - TASK:
