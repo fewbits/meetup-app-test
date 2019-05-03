@@ -32,4 +32,3 @@ jobs:
             - pushd $(shipctl get_resource_state "qconsp-test")/shell
             # Executo os testes
             - ./performance-test.sh
-
