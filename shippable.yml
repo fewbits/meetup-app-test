@@ -16,13 +16,13 @@ jobs:
     # dependencyMode: strict
     steps:
       # O nosso gatilho é um deploy feito no ambiente de Testes
-      - IN: vm_test_deploy
+      - IN: vm_app_test_deploy
         switch: on
       # Vou usar este repositório
       - IN: qconsp-test
         switch: off
       # Preciso saber o IP atual desta VM
-      - IN: vm_test_ip
+      - IN: vm_app_test_ip
         switch: off
       # Agora é a tarefa...
       - TASK:
