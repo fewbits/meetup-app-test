@@ -3,7 +3,7 @@
 ##########
 # Config #
 ##########
-testTimes=30 # Quantas vezes testar?
+testTimes=40 # Quantas vezes testar?
 testTimeout=3 # Resposta em até quantos segundos?
 testSleep=0.1 # Quanto tempo esperar entre cada tentativa?
 testURL="http://app-test.lowbit.com.br" # Qual URL será testada?
