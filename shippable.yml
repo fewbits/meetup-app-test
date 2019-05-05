@@ -20,7 +20,7 @@ jobs:
         switch: on
       # Vou usar este repositório
       - IN: qconsp-test
-        switch: off
+        switch: on
       # Preciso saber o IP atual desta VM
       - IN: vm_app_test_ip
         switch: off
