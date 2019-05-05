@@ -13,14 +13,14 @@ resources:
 jobs:
   - name: performance_test
     type: runSh
-    dependencyMode: strict
+    # dependencyMode: strict
     steps:
       # O nosso gatilho é um deploy feito no ambiente de Testes
       - IN: vm_app_test_deploy
         switch: on
       # Vou usar este repositório
       - IN: qconsp-test
-        switch: on
+        switch: off
       # Preciso saber o IP atual desta VM
       - IN: vm_app_test_ip
         switch: off
